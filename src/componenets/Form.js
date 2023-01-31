@@ -1,5 +1,6 @@
 import React, { useEffect } from "react";
 import { v4 as uuidv4 } from "uuid";
+import "./formStyle.css";
 
 const Form = ({ input, setinput, todo, settodo, edittodo, setedittodo }) => {
   const onInputchange = (e) => {
@@ -22,6 +23,7 @@ const Form = ({ input, setinput, todo, settodo, edittodo, setedittodo }) => {
   }, [setinput, edittodo]);
   const onFormSubmit = (event) => {
     event.preventDefault();
+    console.log("edit", edittodo);
     if (!edittodo) {
       settodo([...todo, { id: uuidv4(), title: input, completed: false }]);
       setinput("");
@@ -30,7 +32,7 @@ const Form = ({ input, setinput, todo, settodo, edittodo, setedittodo }) => {
     }
   };
   return (
-    <form onSubmit={onFormSubmit}>
+    <form className="form-container" onSubmit={onFormSubmit}>
       <input
         type="text"
         placeholder="Enter a todo ..."

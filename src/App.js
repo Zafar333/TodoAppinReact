@@ -10,7 +10,7 @@ function App() {
   const [edittodo, setedittodo] = useState(null);
   return (
     <div className="container">
-      <div className="app-wrappper">
+      <div className="app-wrapper">
         <div>
           <Header />
         </div>
@@ -23,6 +23,8 @@ function App() {
           setedittodo={setedittodo}
         ></Form>
         <TodosList
+          setinput={setinput}
+          input={input}
           todo={todo}
           settodo={settodo}
           edittodo={edittodo}

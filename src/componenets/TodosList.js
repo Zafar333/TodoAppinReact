@@ -1,6 +1,14 @@
 import React from "react";
+import "./todolistStyle.css";
 
-const TodosList = ({ todo, settodo, edittodo, setedittodo }) => {
+const TodosList = ({
+  todo,
+  settodo,
+  edittodo,
+  setedittodo,
+  input,
+  setinput,
+}) => {
   const handleDelete = ({ id }) => {
     settodo(todo.filter((todos) => todos.id !== id));
   };
@@ -15,12 +23,12 @@ const TodosList = ({ todo, settodo, edittodo, setedittodo }) => {
     );
   };
   const handleEdit = ({ id }) => {
-    const findtodo = todo.find((todos) => todos.id === id);
+    let findtodo = todo.find((todos) => todos.id === id);
+
     setedittodo(findtodo);
   };
   return (
-    <div>
-      TodosList
+    <div className="list-container">
       {todo.map((todos) => (
         <li className="list-items " key={todos.id}>
           <input
@@ -31,22 +39,23 @@ const TodosList = ({ todo, settodo, edittodo, setedittodo }) => {
           />
           <div>
             <button
+              id="btn"
               className="button-complete task-button"
               onClick={() => handleComplete(todos)}
             >
               <i className="fa fa-check-circle"></i>
             </button>
             <button
+              id="btn"
               className="button-edit task-button"
               onClick={() => handleEdit(todos)}
             >
               <i className="fa fa-edit"></i>
             </button>
             <button
+              id="btn"
               className="button-delete task-button"
-              onClick={() => {
-                handleDelete(todos);
-              }}
+              onClick={() => handleDelete(todos)}
             >
               <i className="fa fa-trash"></i>
             </button>

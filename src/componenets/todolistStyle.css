@@ -1,0 +1,32 @@
+*{
+    margin: 0px;
+    box-sizing: border-box;
+}
+.list-items{
+    list-style: none;
+    display: flex;
+    align-items: center;
+    margin-bottom: 14px;
+    
+}
+.list-container input{
+    width: 307px;
+    border-radius: 6px;
+    color: whitesmoke;
+    font-size: 15px;
+    height: 35px;
+    border-color: rgb(108, 247, 249);
+    background-color: transparent;
+    padding-left: 14px;
+    
+}
+.list-container{
+    margin-left: 28px;
+}
+
+#btn{
+    
+    position: relative;
+    right: 70px;
+    margin: 1.5px;
+}
